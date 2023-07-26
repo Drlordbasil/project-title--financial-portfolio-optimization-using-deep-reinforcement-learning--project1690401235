@@ -1,0 +1,9 @@
+The package requirements for this Python program are as follows:
+
+1. pandas
+2. numpy
+3. matplotlib
+4. gym
+5. stable_baselines3
+
+Please note that `stable_baselines3` is not a standard Python package and needs to be installed separately.
