@@ -13,7 +13,8 @@ class FinancialPortfolioEnvironment(gym.Env):
         self.data = data
         self.num_assets = data.shape[1]
         self.action_space = gym.spaces.MultiDiscrete([4] * self.num_assets)
-        self.observation_space = gym.spaces.Box(low=0, high=1, shape=(self.num_assets,))
+        self.observation_space = gym.spaces.Box(
+            low=0, high=1, shape=(self.num_assets,))
 
     def reset(self):
         self.portfolio_weights = np.zeros(self.num_assets)
@@ -33,7 +34,8 @@ class FinancialPortfolioEnvironment(gym.Env):
         prices = self.data.iloc[self.current_step]
         returns = (prices / prices.shift(1)) - 1
 
-        self.portfolio_value = self.cash * (1 + np.dot(self.portfolio_weights, returns))
+        self.portfolio_value = self.cash * \
+            (1 + np.dot(self.portfolio_weights, returns))
 
         done = self.current_step == len(self.data) - 1
         reward = self.portfolio_value - self.cash if done else 0
