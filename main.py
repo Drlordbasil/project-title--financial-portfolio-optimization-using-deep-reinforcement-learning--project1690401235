@@ -44,7 +44,7 @@ class FinancialPortfolioEnvironment(gym.Env):
 
         return np.array([self.portfolio_weights]), reward, done, {}
 
-    def render(self, mode='human'):
+    def render(self, mode='human '):
         plt.plot(self.history)
         plt.xlabel('Time')
         plt.ylabel('Portfolio Value')
@@ -93,18 +93,13 @@ def visualize_results(data):
 if __name__ == "__main__":
     # Step 1: Collect data
     data = collect_data()
-
     # Step 2: Train DRL model
     model = train_drl_model(data)
-
     # Step 3: Portfolio optimization using the trained model
     optimize_portfolio(model, data)
-
     # Step 4: Risk management
     calculate_risk_metrics(data)
-
     # Step 5: Evaluate portfolio performance
     evaluate_portfolio_performance(data)
-
     # Step 6: Visualization
     visualize_results(data)
