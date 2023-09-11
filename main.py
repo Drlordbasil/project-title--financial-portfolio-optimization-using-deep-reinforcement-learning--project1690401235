@@ -1,8 +1,8 @@
-from . import gym
-from . import matplotlib.pyplot as plt
-from . import numpy as np
-from . import pandas as pd
-Here are a few optimizations for your Python script:
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import gym
+Here are the optimizations for your Python script:
 
 1. Use relative imports instead of explicit imports of individual modules:
 ```python
@@ -33,6 +33,7 @@ def render(self, mode='human '):
     plt.ylabel('Portfolio Value')
 
 
+plt.show()
 ```
 
 These optimizations should help improve the efficiency and performance of your script.
